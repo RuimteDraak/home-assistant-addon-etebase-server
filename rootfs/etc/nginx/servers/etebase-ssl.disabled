@@ -8,7 +8,7 @@ upstream etebase {
 # configuration of the server
 server {
     # the port your site will be served on
-    listen      %%port%% default_server ssl http2;
+    listen      80 default_server ssl http2;
 
     ssl_certificate /ssl/%%certfile%%;
     ssl_certificate_key /ssl/%%keyfile%%;
