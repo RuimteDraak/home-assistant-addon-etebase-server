@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bashio
+
+bashio::log.info "Starting Daphne server..."
+cd /etc/server
+exec daphne -u /tmp/etebase_server.sock etebase_server.asgi:application
