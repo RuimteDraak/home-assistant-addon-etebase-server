@@ -16,6 +16,7 @@ RUN apk add --no-cache --virtual .build-dependencies \
     && apk add --no-cache \
       openssl \
       nginx \
+      sqlite \
     && pip install --upgrade pip \
     && pip install daphne \
     \

@@ -1,0 +1,27 @@
+#!/usr/bin/bashio
+
+BACKUP_AMOUNT=$(bashio::config 'backups')
+
+if [ $BACKUP_AMOUNT == 0 ]; then
+  exit 0
+fi
+
+bashio::log.info "Creating backup..."
+
+BACKUP_DATETIME=$(date +"%Y.%m.%d-%H.%M")
+BACKUP_LOCATION="/data/backup/$BACKUP_DATETIME"
+BACKUP_FILE="$BACKUP_LOCATION/backup_db.sqlite3"
+mkdir -p $BACKUP_LOCATION
+
+sqlite3 /data/db.sqlite3 ".backup '$BACKUP_FILE'"
+cp "/data/secret.txt" "$BACKUP_LOCATION/secret.txt"
+
+bashio::log.info "Backup $BACKUP_DATETIME created"
+
+cd /data/backup
+
+while [ `ls -1 | wc -l` -gt $BACKUP_AMOUNT ]; do
+    oldest=`ls -c1 | tail -1`
+    echo "Removing old backup $oldest"
+    rm -rf $oldest
+done
