@@ -15,3 +15,6 @@ if bashio::config.true 'ssl'; then
 else
     mv /etc/nginx/servers/etebase.disabled /etc/nginx/servers/etebase.conf
 fi
+
+ingress_interface=$(bashio::addon.ip_address)
+sed -i "s/%%interface%%/${ingress_interface}/g" /etc/nginx/servers/ingress.conf
