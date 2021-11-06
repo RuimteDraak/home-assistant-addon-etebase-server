@@ -10,6 +10,7 @@ RUN  apk add --no-cache --virtual .build-dependencies \
       linux-headers \
       make \
       rust \
+      cargo \
       openssl-dev \
       py3-pip \
       python3-dev \
