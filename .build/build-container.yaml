@@ -29,6 +29,7 @@ steps:
           homeassistant/amd64-builder:$(builderVersion) \
           -t /data \
           --$(architecture) \
-          --docker-hub ruimtedraak \
+          --docker-user $(dockerUsername) \
+          --docker-password $(dockerPassword) \
           --docker-hub-check
     displayName: 'Build image for $(architecture)'
