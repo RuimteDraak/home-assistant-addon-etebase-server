@@ -1,6 +1,6 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM as builder
-RUN apk add --no-cache --virtual .build-dependencies \
+RUN  apk add --no-cache --virtual .build-dependencies \
       g++ \
       gcc \
       git \
@@ -9,6 +9,7 @@ RUN apk add --no-cache --virtual .build-dependencies \
       postgresql-dev \
       linux-headers \
       make \
+      rust \
       openssl-dev \
       py3-pip \
       python3-dev \
