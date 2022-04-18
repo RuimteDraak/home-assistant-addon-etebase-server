@@ -23,7 +23,7 @@ RUN  apk add --no-cache --virtual .build-dependencies \
     && pip install daphne \
     \
     && cd /etc \
-    && git clone https://github.com/etesync/server.git --branch v0.7.0 --single-branch \
+    && git clone https://github.com/etesync/server.git --branch v0.8.3 --single-branch \
     && cd server \
     && pip install -r requirements.txt \
     && ./manage.py collectstatic \
