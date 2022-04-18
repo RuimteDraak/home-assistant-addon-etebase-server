@@ -12,6 +12,7 @@ stages:
   - stage: Build
     jobs:
       - job: build
+        timeoutInMinutes: 120
         strategy:
           matrix:
             amd64:
