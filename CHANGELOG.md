@@ -1,3 +1,6 @@
+Version 2022.11.0
+- Upate EteBase to version 0.10.0
+
 Version 2022.05.0
 - Update to latest base image
 
