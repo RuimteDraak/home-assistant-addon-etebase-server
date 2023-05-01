@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bashio
+set -e
 
 declare certfile
 declare keyfile
